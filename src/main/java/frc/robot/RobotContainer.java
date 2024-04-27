@@ -44,7 +44,7 @@ public class RobotContainer {
   private void configureBindings() {
     // Schedule `ExampleCommand` when `exampleCondition` changes to `true`
     new Trigger(m_driverController.x())
-        .whileTrue(new SpinShooter(m_shooterSubsystem, 0));
+        .whileTrue(new SpinShooter(m_shooterSubsystem, 20));
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.

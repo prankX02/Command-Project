@@ -13,7 +13,7 @@ public class ShooterSubsystem extends SubsystemBase {
     private TalonFX shootermotor; 
 
   public ShooterSubsystem() {
-    shootermotor = new TalonFX(0);
+    shootermotor = new TalonFX(3);
     // in init function, set slot 0 gains
     var slot0Configs = new Slot0Configs();
     slot0Configs.kS = 0.05; // Add 0.05 V output to overcome static friction

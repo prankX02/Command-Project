@@ -13,7 +13,7 @@ public final class Autos {
   public static Command runShooter(ShooterSubsystem subsystem) {
     return Commands.sequence(new SpinShooter(subsystem, 20).withTimeout(5), 
     Commands.waitSeconds(5), 
-    new SpinShooter(subsystem, 20));
+    new SpinShooter(subsystem, 20).withTimeout(5));
   }
 
   private Autos() {
