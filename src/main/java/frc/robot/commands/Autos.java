@@ -11,9 +11,10 @@ import edu.wpi.first.wpilibj2.command.Commands;
 public final class Autos {
   /** Example static factory for an autonomous command. */
   public static Command runShooter(ShooterSubsystem subsystem) {
-    return Commands.sequence(new SpinShooter(subsystem, 20).withTimeout(5), 
-    Commands.waitSeconds(5), 
-    new SpinShooter(subsystem, 20).withTimeout(5));
+    return Commands.sequence(
+      new SpinShooter(subsystem, 20).withTimeout(5), 
+      Commands.waitSeconds(5), 
+      new SpinShooter(subsystem, 20).withTimeout(5));
   }
 
   private Autos() {
