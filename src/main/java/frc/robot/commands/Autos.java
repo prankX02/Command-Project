@@ -4,14 +4,16 @@
 
 package frc.robot.commands;
 
-import frc.robot.subsystems.ExampleSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 
 public final class Autos {
   /** Example static factory for an autonomous command. */
-  public static Command exampleAuto(ExampleSubsystem subsystem) {
-    return Commands.sequence(subsystem.exampleMethodCommand(), new ExampleCommand(subsystem));
+  public static Command runShooter(ShooterSubsystem subsystem) {
+    return Commands.sequence(new SpinShooter(subsystem, 20).withTimeout(5), 
+    Commands.waitSeconds(5), 
+    new SpinShooter(subsystem, 20));
   }
 
   private Autos() {
